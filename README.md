@@ -1,4 +1,3 @@
-markdown
 # Password Strength Checker
 
 A simple, secure, command-line Python script to evaluate the strength of a password based on a set of common complexity criteria.
