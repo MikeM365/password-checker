@@ -16,10 +16,12 @@ import getpass
 # entropy alone misses passwords attackers guess first.
 COMMON_PASSWORDS = {
     "123456", "password", "123456789", "12345678", "12345", "qwerty",
-    "abc123", "password1", "111111", "123123", "letmein", "welcome",
-    "monkey", "login", "admin", "iloveyou", "qwerty123", "dragon",
-    "sunshine", "princess", "football", "freedom", "whatever", "trustno1",
-    "000000", "1q2w3e4r", "zaq1zaq1", "passw0rd", "master", "hello",
+    "abc123", "password1", "password123", "111111", "123123", "letmein",
+    "welcome", "monkey", "login", "admin", "admin123", "iloveyou",
+    "qwerty123", "dragon", "sunshine", "princess", "football",
+    "football123", "freedom", "whatever", "trustno1", "000000",
+    "1q2w3e4r", "zaq1zaq1", "passw0rd", "master", "hello", "baseball",
+    "123qwe", "1234567890", "qazwsx", "michael", "superman", "batman",
 }
 
 # Guesses-per-second assumptions for two different attack scenarios.
@@ -109,8 +111,8 @@ def check_strength(password: str) -> list:
 def analyze(password: str):
     print()
     if check_common_password(password):
-        print("⚠ This password appears in a list of common/breached passwords.")
-        print("  No amount of entropy matters here — attackers check these first.")
+        print("[!] This password appears in a list of common/breached passwords.")
+        print("    No amount of entropy matters here — attackers check these first.")
         return
 
     entropy = calculate_entropy(password)
